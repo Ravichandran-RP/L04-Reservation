@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="MOBILE NUMBER"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:textColor="#50F10C"
             android:textColorHint="#50F10C"
             android:textSize="18sp" />
@@ -79,22 +79,37 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textViewArea"
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20sp"
             android:paddingRight="10sp"
-            android:text="Table Area:"
+            android:text="Pax:"
             android:textColor="#0A2EF8"
             android:textSize="20sp"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
+
+        <EditText
+            android:id="@+id/editTextGroupSize"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="GROUP SIZE"
+            android:textColor="#50F10C"
+            android:textColorHint="#50F10C"
+            android:textSize="18sp"
+            android:inputType="number"/>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/checkBoxSmoking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="Non-Smoking" />
+            android:text="Non-Smoking"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <ScrollView
@@ -102,65 +117,145 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <DatePicker
-                android:id="@+id/datePicker"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:calendarViewShown="false"
-                android:datePickerMode="spinner" />
+                android:orientation="horizontal">
 
-            <TimePicker
-                android:id="@+id/timePicker"
-                android:layout_width="wrap_content"
+                <DatePicker
+                    android:id="@+id/datePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="0" />
+
+                    <Button
+                        android:id="@+id/reset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:background="@android:color/holo_red_light"
+                        android:text="Reset"
+                        android:textColor="@color/black"
+                        app:backgroundTint="@android:color/holo_red_light" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="0" />
+
+                    <Button
+                        android:id="@+id/submit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:background="@android:color/holo_orange_light"
+                        android:text="Submit"
+                        android:textColor="@android:color/black"
+                        app:backgroundTint="@android:color/holo_orange_light" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:calendarViewShown="false"
-                android:timePickerMode="spinner" />
+                android:orientation="horizontal">
+
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:timePickerMode="spinner" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewDisplayName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="Name: Waran"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/purple_500"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="Contact: 98002685"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/purple_500"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/textViewPax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="Group Size: 5"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/purple_500"
+                        android:textStyle="bold" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_weight="0" />
+
+                    <TextView
+                        android:id="@+id/textViewSmokingTable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="You chose Non-Smoking Table Area."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/purple_500"
+                        android:textStyle="bold"/>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_weight="0" />
+
+                    <TextView
+                        android:id="@+id/textViewDateTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="Your Booking is on 21/2/2022 at 13:40."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="#BA8C02"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/submit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:background="@android:color/holo_orange_light"
-            android:text="Submit"
-            android:textColor="@android:color/black"
-            app:backgroundTint="@android:color/holo_orange_light" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:background="@android:color/holo_red_light"
-            android:text="Reset"
-            android:textColor="@color/black"
-            app:backgroundTint="@android:color/holo_red_light" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
 
 </LinearLayout>
