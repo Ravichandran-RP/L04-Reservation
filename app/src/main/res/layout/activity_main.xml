@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:text="@string/title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#D3A604"
+        android:textColor="#F33C7A"
         android:textSize="34sp"
         android:textStyle="bold" />
 
@@ -40,8 +40,8 @@
             android:ems="10"
             android:hint="NAME AS IN NRIC"
             android:inputType="textPersonName"
-            android:textColor="#50F10C"
-            android:textColorHint="#50F10C"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textColorHint="@android:color/holo_orange_dark"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -68,8 +68,8 @@
             android:ems="10"
             android:hint="MOBILE NUMBER"
             android:inputType="number"
-            android:textColor="#50F10C"
-            android:textColorHint="#50F10C"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textColorHint="@android:color/holo_orange_dark"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -95,10 +95,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="GROUP SIZE"
-            android:textColor="#50F10C"
-            android:textColorHint="#50F10C"
-            android:textSize="18sp"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textColorHint="@android:color/holo_orange_dark"
+            android:textSize="18sp" />
 
         <Space
             android:layout_width="20dp"
@@ -197,7 +197,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
-                        android:text="Name: Waran"
+                        android:text=""
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="@color/purple_500"
                         android:textStyle="bold" />
@@ -207,7 +207,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
-                        android:text="Contact: 98002685"
+                        android:text=""
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="@color/purple_500"
                         android:textStyle="bold"/>
@@ -217,7 +217,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
-                        android:text="Group Size: 5"
+                        android:text=""
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="@color/purple_500"
                         android:textStyle="bold" />
@@ -232,7 +232,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
-                        android:text="You chose Non-Smoking Table Area."
+                        android:text=""
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="@color/purple_500"
                         android:textStyle="bold"/>
@@ -247,7 +247,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
-                        android:text="Your Booking is on 21/2/2022 at 13:40."
+                        android:text=""
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="#BA8C02"
                         android:textSize="18sp"

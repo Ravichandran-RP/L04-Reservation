@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         displaysmoking.setText("You chose Non-Smoking Table Area.");
                     }
                     displaybooking.setText("Your Booking is on "+dp.getDayOfMonth()+"/"+(1+dp.getMonth())+"/"+dp.getYear()+
-                            "at "+tp.getCurrentHour()+":"+tp.getCurrentMinute()+".");
+                            " at "+tp.getCurrentHour()+":"+tp.getCurrentMinute()+".");
                 }
                 else{
                     Toast.makeText(MainActivity.this, "Please Provide All Information", Toast.LENGTH_LONG).show();
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
                 tp.setCurrentHour(19);
                 tp.setCurrentMinute(30);
-                dp.updateDate(2020,7,1);
+                dp.updateDate(2020,5,1);
             }
         });
 
