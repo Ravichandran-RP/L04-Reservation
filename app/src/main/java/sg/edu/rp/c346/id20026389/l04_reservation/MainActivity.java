@@ -46,27 +46,42 @@ public class MainActivity extends AppCompatActivity {
         displaypax=findViewById(R.id.textViewPax);
         displaysmoking=findViewById(R.id.textViewSmokingTable);
         displaybooking=findViewById(R.id.textViewDateTime);
-        submit.setOnClickListener(new View.OnClickListener() {
+        tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
-            public void onClick(View view) {
-                if(inputname.getText().toString().trim().length()!=0 && inputnumber.getText().toString().trim().length()!=0
-                        && inputpax.getText().toString().trim().length()!=0){
-                    displayname.setText("Name: "+inputname.getText().toString());
-                    displaynumber.setText("Contact: "+inputnumber.getText().toString());
-                    displaypax.setText("Group Size: "+inputpax.getText().toString());
-                    if(inputsmoking.isChecked()==true){
-                        displaysmoking.setText("You chose Smoking Table Area.");
-                    }else{
-                        displaysmoking.setText("You chose Non-Smoking Table Area.");
-                    }
-                    displaybooking.setText("Your Booking is on "+dp.getDayOfMonth()+"/"+(1+dp.getMonth())+"/"+dp.getYear()+
-                            " at "+tp.getCurrentHour()+":"+tp.getCurrentMinute()+".");
+            public void onTimeChanged(TimePicker v, int hourOfDay, int minute) {
+                if(hourOfDay>20){
+                    tp.setCurrentHour(20);
+                    tp.setCurrentMinute(00);
+                    Toast.makeText(MainActivity.this, "Booking slots only until 8:59PM", Toast.LENGTH_LONG).show();
                 }
-                else{
-                    Toast.makeText(MainActivity.this, "Please Provide All Information", Toast.LENGTH_LONG).show();
+                else if(hourOfDay<8){
+                    tp.setCurrentHour(8);
+                    tp.setCurrentMinute(00);
+                    Toast.makeText(MainActivity.this, "Booking slots starts only at 8AM", Toast.LENGTH_LONG).show();
                 }
             }
         });
+
+                submit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (inputname.getText().toString().trim().length() != 0 && inputnumber.getText().toString().trim().length() != 0
+                                && inputpax.getText().toString().trim().length() != 0) {
+                            displayname.setText("Name: " + inputname.getText().toString());
+                            displaynumber.setText("Contact: " + inputnumber.getText().toString());
+                            displaypax.setText("Group Size: " + inputpax.getText().toString());
+                            if (inputsmoking.isChecked() == true) {
+                                displaysmoking.setText("You chose Smoking Table Area.");
+                            } else {
+                                displaysmoking.setText("You chose Non-Smoking Table Area.");
+                            }
+                            displaybooking.setText("Your Booking is on " + dp.getDayOfMonth() + "/" + (1 + dp.getMonth()) + "/" + dp.getYear() +
+                                    " at " + tp.getCurrentHour() + ":" + tp.getCurrentMinute() + ".");
+                        } else {
+                            Toast.makeText(MainActivity.this, "Please Provide All Information", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
